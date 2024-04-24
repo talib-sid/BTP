@@ -24,19 +24,19 @@ function Tools() {
           <a href="Mixedland" className="tool-link_2">
           <img src={require('./asdf.jpg')} alt="tool image 2" className="tool-image" />
           </a>
-          <p className="tool-description">RMSE</p>
+          <p className="tool-description">Composite Runoff</p>
         </div>
         <div className="tool">
-          <a href="HydroTools" className="tool-link">
+          <a href="RMSE" className="tool-link">
           <img src={require('./asdf.jpg')} alt="tool image 3" className="tool-image" />
           </a>
-          <p className="tool-description">Tool 1 Description</p>
+          <p className="tool-description">RMSE</p>
         </div>
         <div className="tool">
           <a href="HydroTools" className="tool-link">
           <img src={require('./asdf.jpg')} alt="tool image 4" className="tool-image" />
           </a>
-          <p className="tool-description">Tool 1 Description</p>
+          <p className="tool-description">Tool 4</p>
         </div>
       </div>
     </div>

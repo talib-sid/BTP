@@ -4,7 +4,7 @@ import Home from './Components/Home';
 import Tools from './Components/Tools'
 import HydroTools from './Components/HydroTools'
 import CompositeRunoffCoefficient from './Components/MixedLand'
-
+import RMSECalculator from './Components/RMSE';
 
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
           <Route exact path="/tools" element={<Tools/>} />
           <Route exact path="/HydroTools" element={<HydroTools/>} />
           <Route exact path="/Mixedland" element={<CompositeRunoffCoefficient/>} />
+          <Route exact path="/RMSE" element={<RMSECalculator/>} />
         </Routes>
       </div>
     </Router>

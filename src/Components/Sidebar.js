@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BsChevronRight, BsSearch, BsHouse, BsBell, BsHeart, BsWallet, BsLogOut, BsMoonFill, BsSunFill } from 'react-icons/bs';
-import { FaChartBar } from 'react-icons/fa';
+import { BsChevronRight, BsSearch, BsHouse, BsHeart, BsWallet, BsMoonFill, BsSunFill } from 'react-icons/bs';
+// import { FaChartBar } from 'react-icons/fa';
 import './Sidebar.css'
 
 
