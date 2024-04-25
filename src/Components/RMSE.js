@@ -57,7 +57,7 @@ const RMSECalculator = () => {
             case 'meanbias':
                 setResult(calculateMBE());
                 break
-            case 'rsquare':
+            case 'r2':
                 setResult(calculateRSquared());
                 break;
             case 'kendalltau':
@@ -297,13 +297,15 @@ const RMSECalculator = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
-
-
-            {errorMessage && <p>{errorMessage}</p>}
-            <div style={{ height: '400px', width: '600px' }}>
+            {errorMessage && <p style={{ marginBottom: '10px', color: 'red' }}>{errorMessage}</p>}
+            <div style={{ height: '400px', width: '600px', marginBottom: '20px' }}>
                 <Line data={dataGraph} />
             </div>
-            <select value={selectedMetric} onChange={(e) => setSelectedMetric(e.target.value)}>
+            <select
+                value={selectedMetric}
+                onChange={(e) => setSelectedMetric(e.target.value)}
+                style={{ marginBottom: '20px' }}
+            >
                 <option value="">Select Metric</option>
                 <option value="mse">MSE</option>
                 <option value="rmse">RMSE</option>
@@ -314,33 +316,55 @@ const RMSECalculator = () => {
                 <option value="idx">Index of Agreement</option>
                 <option value="kling">Kling Gupta Efficiency (KGE)</option>
                 <option value="deri">Derivation of Gain</option>
-                {/* <option value="rsquare">R-Square</option> */}
-                {/* Add options for other metrics */}
             </select>
-            {<p>{result}</p>}
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-                <select value={inputMethod} onChange={handleInputMethodChange}>
+            {result && <p style={{ marginBottom: '20px' }}>Result: {result}</p>}
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <select
+                    value={inputMethod}
+                    onChange={handleInputMethodChange}
+                    style={{ marginRight: '10px' }}
+                >
                     <option value="manual">Manual Input</option>
                     <option value="csv">Upload CSV</option>
                 </select>
                 {inputMethod === 'manual' ? (
                     <div>
-                        <input type="text" name="x" value={inputX} onChange={handleChange} placeholder="X value" />
-                        <input type="text" name="y" value={inputY} onChange={handleChange} placeholder="Y value" />
+                        <input
+                            type="text"
+                            name="x"
+                            value={inputX}
+                            onChange={handleChange}
+                            placeholder="Observed value"
+                            style={{ marginRight: '10px' }}
+                        />
+                        <input
+                            type="text"
+                            name="y"
+                            value={inputY}
+                            onChange={handleChange}
+                            placeholder="Predicted value"
+                            style={{ marginRight: '10px' }}
+                        />
                         <button onClick={handleAddData}>Add Data</button>
                     </div>
                 ) : (
                     <div>
-                        <input id="fileInput" type="file" accept=".csv" onChange={handleFileUpload} />
-                    </div>
+                        <input
+                            id="fileInput"
+                            type="file"
+                            accept=".csv"
+                            onChange={handleFileUpload}
+                            style={{ marginRight: '10px' }}
+                        />
+                     </div>
                 )}
             </div>
-
-            <button onClick={calculateMetric}>Calculate</button>
+            <button onClick={calculateMetric} style={{ marginRight: '10px' }}>Calculate</button>
+            <br></br>
             <button onClick={handleReset}>Reset</button>
-
         </div>
     );
+    
 
 };
 
