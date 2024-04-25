@@ -329,18 +329,19 @@ const RMSECalculator = () => {
                 </select>
                 {inputMethod === 'manual' ? (
                     <div>
+                        
                         <input
                             type="text"
-                            name="x"
-                            value={inputX}
+                            name="y"
+                            value={inputY}
                             onChange={handleChange}
                             placeholder="Observed value"
                             style={{ marginRight: '10px' }}
                         />
                         <input
                             type="text"
-                            name="y"
-                            value={inputY}
+                            name="x"
+                            value={inputX}
                             onChange={handleChange}
                             placeholder="Predicted value"
                             style={{ marginRight: '10px' }}

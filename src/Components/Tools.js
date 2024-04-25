@@ -33,10 +33,10 @@ function Tools() {
           <p className="tool-description">RMSE</p>
         </div>
         <div className="tool">
-          <a href="HydroTools" className="tool-link">
+          <a href="WQI" className="tool-link">
           <img src={require('./asdf.jpg')} alt="tool image 4" className="tool-image" />
           </a>
-          <p className="tool-description">Tool 4</p>
+          <p className="tool-description">WQI</p>
         </div>
       </div>
     </div>
